@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+    <title>Health Predict PLUS | Liver Disease Assessment</title>
+
+    <!-- Bootstrap and FontAwesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("download").addEventListener("click", () => {
+                const report = this.document.getElementById("assess");
+                var opt = {
+                    margin: 1,
+                    filename: 'Liver_Assessment_Report.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+                html2pdf().from(report).set(opt).save();
+            });
+        }
+    </script>
+
+    <style>
+        body {
+            padding: 3rem;
+            color: #5a5a5a;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1, h2, h3, h4 {
+            text-align: center;
+        }
+        .container {
+            max-width: 960px;
+            margin-top: 20px;
+        }
+        .report-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .section {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-download {
+            background-color: #007bff;
+            color: white;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .patient-info {
+            font-weight: bold;
+        }
+        .normal-range {
+            font-size: small;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="assess" class="container">
+        <!-- Hospital Report Header -->
+        <div class="report-header text-center">
+            <h1>Health Predict PLUS</h1>
+            <h4>Liver Disease Assessment Report</h4>
+        </div>
+
+        <!-- Patient Details Section -->
+        
+
+        <!-- Diagnostic Details Section -->
+        <div class="section">
+            <h3>Diagnostic Information</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Total Bilirubin: {{ total_bilirubin }} mg/dL <span class="normal-range">(Normal: 0.1 - 1.2)</span></p>
+                    <p>Direct Bilirubin: {{ direct_bilirubin }} mg/dL <span class="normal-range">(Normal: 0.0 - 0.3)</span></p>
+                    <p>Alkaline Phosphotase: {{ alkaline_phosphotase }} U/L <span class="normal-range">(Normal: 44 - 147)</span></p>
+                </div>
+                <div class="col-md-6">
+                    <p>Alamine Aminotransferase: {{ alamine_aminotransferase }} U/L <span class="normal-range">(Normal: 7 - 56)</span></p>
+                    <p>Total Proteins: {{ total_proteins }} g/dL <span class="normal-range">(Normal: 6.0 - 8.3)</span></p>
+                    <p>Albumin: {{ albumin }} g/dL <span class="normal-range">(Normal: 3.4 - 5.4)</span></p>
+                    <p>Albumin and Globulin Ratio: {{ albumin_globulin_ratio }} <span class="normal-range">(Normal: 1.0 - 2.1)</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prediction Results Section -->
+        <div class="section text-center">
+            <h3>Prediction Results</h3>
+            <p>{{ prediction_text }}</p>
+        </div>
+
+        <!-- Learn More Section -->
+        <p class="text-center">
+            Click <a href="/disindex">here</a> to learn more about Liver Disease.
+        </p>
+
+        <!-- Footer Section -->
+        <p class="text-center">&copy; 2024 Health Predict PLUS</p>
+    </div>
+
+    <!-- Download Button -->
+    <div class="text-center">
+        <button class="btn btn-download btn-lg" id="download">Download Report</button>
+    </div>
+
+</body>
+</html>

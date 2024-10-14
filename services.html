@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HealthPro | Services</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .services-section {
+            padding: 60px 0;
+            background-color: #f7f7f7;
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card img {
+            border-radius: 10px 10px 0 0;
+        }
+
+        .service-card h4 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+        }
+
+        .btn-primary-custom {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .page-header {
+            padding: 100px 0;
+            background: url('static/img/services-banner.jpg') no-repeat center center/cover;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+        }
+
+        .page-header p {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <img src="../static/img/logo.png" alt="Health Pro Logo" style="height: 70px;"><br>
+                &nbsp;&nbsp;&nbsp;
+                <a class="navbar-brand" href="#"><b>HealthPro</b></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signup">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Page Header -->
+        <div class="page-header text-center">
+            <div class="container">
+                <h1><b>Our Services</b></h1>
+                <p>Explore the range of solutions we offer to enhance your healthcare experience.</p>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img class="card-img-top" src="static/img/service1.jpg" alt="Service 1">
+                            <div class="card-body text-center">
+                                <h4 class="card-title"><b>Comprehensive Health Predict PLUS
+ments</b></h4>
+                                <p class="card-text">Our Health Predict PLUS
+ment tools help identify and mitigate potential health risks with precision and care.</p>
+                                <a href="/contact" class="btn btn-primary-custom">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img class="card-img-top" src="static/img/service2.jpg" alt="Service 2">
+                            <div class="card-body text-center">
+                                <h4 class="card-title"><b>Advanced Diagnostic Tools</b></h4>
+                                <p class="card-text">Our cutting-edge diagnostic services provide accurate results to support your healthcare decisions.</p>
+                                <a href="/contact" class="btn btn-primary-custom">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img class="card-img-top" src="static/img/service3.jpg" alt="Service 3">
+                            <div class="card-body text-center">
+                                <h4 class="card-title"><b>Data Security Solutions</b></h4>
+                                <p class="card-text">Protect your data with our state-of-the-art security measures designed to keep your information safe.</p>
+                                <a href="/contact" class="btn btn-primary-custom">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img class="card-img-top" src="static/img/service4.jpg" alt="Service 4">
+                            <div class="card-body text-center">
+                                <h4 class="card-title"><b>Custom Healthcare Solutions</b></h4>
+                                <p class="card-text">Tailored services that meet the unique needs of your healthcare institution, ensuring optimal performance.</p>
+                                <a href="/contact" class="btn btn-primary-custom">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img class="card-img-top" src="static/img/service5.jpg" alt="Service 5">
+                            <div class="card-body text-center">
+                                <h4 class="card-title"><b>Training and Support</b></h4>
+                                <p class="card-text">Comprehensive training and ongoing support to ensure you get the most out of our services.</p>
+                                <a href="/contact" class="btn btn-primary-custom">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card service-card">
+                            <img class="card-img-top" src="static/img/service6.jpg" alt="Service 6">
+                            <div class="card-body text-center">
+                                <h4 class="card-title"><b>24/7 Customer Support</b></h4>
+                                <p class="card-text">Our dedicated team is here to assist you at any time, ensuring your needs are met around the clock.</p>
+                                <a href="/contact" class="btn btn-primary-custom">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="container-fluid footer text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>HealthPro</h5>
+                    <p>Leading the way in health assessment innovation.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@healthpro.com</p>
+                    <p>Phone: +1 800 123 4567</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <hr class="light">
+                <p>&copy; 2024 HealthPro. All rights reserved.</p>
+            </div>
+        </footer>
+    </form>
+</body>
+
+</html>

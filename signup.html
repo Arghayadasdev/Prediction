@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+RiskAssess | Sign Up
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+
+<link rel="stylesheet" href="{{url_for('.static', filename='login.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+
+    <form class="form-signin" method="POST" action="/signup" style="background-color: #93b7e0; padding: 20px; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img src="../static/img/file.png" alt="Health Pro Logo" style="height: 100px;">
+    </div>
+    <h1 style="text-align:center;  font-size:30px">Health Predict PLUS</h1>
+    <p style="text-align:center">Create Account</p>
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.username) }}
+    {{ wtf.form_field(form.email) }}
+    {{ wtf.form_field(form.password) }}
+    <br/>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button><br/>
+  </form>
+  <p style="text-align:center">Already have an account? <a href="/login">Login</a></p>
+  <br/>
+  <p style="text-align:center"><a href="/">Back Home</a></p>
+</div> <!-- /container -->
+{% endblock %}

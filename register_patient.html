@@ -1,0 +1,170 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+RiskAssess | Patient Registration
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+    body {
+        background-color: #f0f5f9;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .form-signin {
+        background: linear-gradient(145deg, #d6e5f3, #a4bcd4);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        max-width: 800px;
+        margin: 50px auto;
+    }
+
+    .form-signin h1 {
+        font-weight: bold;
+        color: #2a507b;
+        font-size: 2.5em;
+    }
+
+    .form-signin p {
+        color: #4f6582;
+    }
+
+    .form-signin .btn {
+        background-color: #2a507b;
+        color: white;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 1.1em;
+    }
+
+    .form-signin .btn:hover {
+        background-color: #1f3c5a;
+    }
+
+    .form-field {
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    img {
+        height: 120px;
+    }
+
+    .form-group label {
+        font-size: 1.1em;
+        color: #2a507b;
+    }
+
+    input, select, textarea {
+        border-radius: 10px;
+        border: 1px solid #a4bcd4;
+        padding: 10px;
+        width: 100%;
+        font-size: 1em;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #2a507b;
+        outline: none;
+        box-shadow: 0 0 10px rgba(42, 80, 123, 0.2);
+    }
+
+    a {
+        color: #2a507b;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .section-header {
+        color: #2a507b;
+        margin-top: 20px;
+        font-size: 1.4em;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <form class="form-signin" method="POST" action="/register_detailed_patient">
+    
+    <!-- Logo -->
+    <div style="text-align: center;">
+      <img src="{{ url_for('static', filename='img/health_logo.png') }}" alt="Health Pro Logo">
+    </div>
+
+    <!-- Title and Subtitle -->
+    <h1 style="text-align:center;">RiskAssess</h1>
+    <p style="text-align:center; font-size: 1.2em;">Comprehensive Patient Registration</p>
+
+    <!-- Form Fields -->
+    {{ form.hidden_tag() }}
+
+    <!-- Personal Information -->
+    <h3 class="section-header">Personal Information</h3>
+    <div class="form-field">{{ wtf.form_field(form.username, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.email, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.password, class_="form-control") }}</div>
+    
+    <!-- Patient Details -->
+    <h3 class="section-header">Patient Details</h3>
+    <div class="form-field">{{ wtf.form_field(form.patient_name, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.patient_id, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.age, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.gender, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.birthdate, class_="form-control") }}</div>
+
+    <!-- Contact Information -->
+    <h3 class="section-header">Contact Information</h3>
+    <div class="form-field">{{ wtf.form_field(form.phone_number, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.address, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.city, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.state, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.zip_code, class_="form-control") }}</div>
+    
+    <!-- Emergency Contact -->
+    <h3 class="section-header">Emergency Contact</h3>
+    <div class="form-field">{{ wtf.form_field(form.emergency_contact_name, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.emergency_contact_phone, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.relationship_to_patient, class_="form-control") }}</div>
+
+    <!-- Medical Information -->
+    <h3 class="section-header">Medical Information</h3>
+    <div class="form-field">{{ wtf.form_field(form.medical_history, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.current_medications, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.allergies, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.blood_type, class_="form-control") }}</div>
+
+    <!-- Insurance Information -->
+    <h3 class="section-header">Insurance Information</h3>
+    <div class="form-field">{{ wtf.form_field(form.insurance_provider, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.insurance_policy_number, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.insurance_group_number, class_="form-control") }}</div>
+
+    <!-- Consent -->
+    <h3 class="section-header">Consent</h3>
+    <div class="form-field">{{ wtf.form_field(form.consent_to_treatment, class_="form-control") }}</div>
+    <div class="form-field">{{ wtf.form_field(form.consent_to_share_info, class_="form-control") }}</div>
+    
+    <!-- Submit Button -->
+    <div style="text-align: center;">
+      <button class="btn btn-lg btn-primary" type="submit">Register Now</button>
+    </div>
+    
+  </form>
+
+  <!-- Links -->
+  <div style="text-align:center; margin-top: 20px;">
+    <p>Already have an account? <a href="/login">Login</a></p>
+    <p><a href="/">Back Home</a></p>
+  </div>
+</div>
+{% endblock %}

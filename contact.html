@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Health Predict PLUS | Home</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .custom-carousel .carousel-item {
+            height: 80vh;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .custom-carousel .carousel-item img {
+            max-height: 80vh;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .carousel-caption h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .carousel-caption p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        .feature-box {
+            border: 2px solid #007bff;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .footer {
+            background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%);
+            color: white;
+        }
+
+        .footer a {
+            color: #f5f5f5;
+        }
+
+        .footer a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .custom-btn {
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-btn:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <img src="../static/img/logo.png" alt="Health Pro Logo" style="height: 70px;"><br>
+                &nbsp;&nbsp;&nbsp;
+                <a class="navbar-brand" href="#"><b>Health Predict PLUS</b></a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About Us</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/help">Help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signup">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    <marquee behavior="scroll" direction="left">This is a scrolling text using the marquee tag!</marquee>
+
+    <!-- Contact Info Section -->
+    <div class="contact-info text-center">
+        <div class="container">
+            <h1 class="display-4">Contact Us</h1>
+            <p class="lead">We'd love to hear from you. Reach out to us using the form below or through the contact details provided.</p>
+        </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="container contact-form">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Send Us a Message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Contact Information</h2>
+                <p><i class="fas fa-envelope"></i> Email: support@healthpro.com</p>
+                <p><i class="fas fa-phone"></i> Phone: +91 7001982361</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: 123 Health Street, Wellness City, HC 12345</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid footer text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>HealthPro</h5>
+                <p>Leading the way in health assessment innovation.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: support@healthpro.com</p>
+                <p>Phone: +91 7001982361</p>
+            </div>
+        </div>
+        <div class="col-12">
+            <hr class="light">
+            <p>&copy; 2024 HealthPro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
